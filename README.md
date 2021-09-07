@@ -23,16 +23,14 @@ pip install adafruit-circuitpython-lps35hw
 ```
 Get CuRe software
 ```
-git clone ... # TODO
+git clone https://github.com/rombirli/CuRe
 ```
 Run CuRe software
 ```
 cd CuRe
 python main.py
 ```
-## How to use CuRe software
-Once you see the GUI appears, ...
-## Python
+## Python scripts
 Python scripts manage the different sensors and motors. 
 They are able to measure datas and send it in real time to the GUI, act the motors, or catching events thrown by the GUI.
 Don't care to start the GUI manually, the scripts will do it for you !
