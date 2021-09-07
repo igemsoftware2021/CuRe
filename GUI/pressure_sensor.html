@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><Thermometer></title>
+    <link rel="stylesheet" href="pressure_sensor.css">
+    <script src="chart.js" type="text/javascript"></script>
+    <script src="tools.js" type="text/javascript"></script>
+    <script src="plotter.js" type="text/javascript"></script>
+</head>
+<body>
+<div>
+    <div>
+        <button onclick="redirect(main)">
+            <img src="res/back.svg">
+        </button>
+    </div>
+    <canvas id="plot_canvas"></canvas>
+    <script>
+        chart = new Chart("plot_canvas",
+            {
+                type: "line",
+                data: {
+                    labels: [],
+                    datasets: [],
+                },
+                options: {
+                    animation: {
+                        duration: .1
+                    },
+                    scales: {
+                        yAxes: [{
+
+                            gridLines: {
+                                color: 'lightgray',
+                            }
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                                color: 'lightgray'
+                            }
+                        }]
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                // This more specific font property overrides the global property
+                                fontColor: 'yellow'
+                            }
+                        }
+                    }
+                }
+            }
+        )
+    </script>
+</div>
+</body>
+</html>
