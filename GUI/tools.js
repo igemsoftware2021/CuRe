@@ -1,8 +1,7 @@
-let main = 'main',
-    pressure_sensor = 'pressure_sensor',
-    valve = 'valve',
-    settings = 'config',
-    current_page = main
+let main_str = 'main',
+    pressure_sensor_str = 'pressure_sensor',
+    auto_str = 'auto',
+    current_page = main_str
 
 function redirect(page) {
     throw_event('redirect_' + page)

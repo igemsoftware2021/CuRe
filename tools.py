@@ -24,8 +24,6 @@ def gui_path():
     return getcwd() + path_end
 
 
-def normalize_array(array, expected_length, blank_val=0):
-    if len(array) > expected_length:
-        return array[-expected_length:]
-    else:
-        return [blank_val] * (expected_length - len(array)) + array
+class Updatable():
+    def update(self):
+        raise Exception(f'You must override the update function of {self.__class__}')

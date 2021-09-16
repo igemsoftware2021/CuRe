@@ -53,29 +53,54 @@ div button:active img {
   height: 90%;
 }
 div .press {
-  background: darkred;
-}
-div .press:hover {
-  background: red;
-}
-div .settings {
-  margin: 10%;
-  background: darkcyan;
-}
-div .settings:hover {
-  background: cyan;
-}
-div .valve {
-  background: darkgreen;
-}
-div .valve:hover {
-  background: green;
-}
-div .pump {
   background: darkblue;
 }
-div .pump:hover {
+div .press:hover {
   background: blue;
+}
+div .bioreactor1 {
+  background: #d07600;
+}
+div .bioreactor1:hover {
+  background: #ffa400;
+}
+div .bioreactor2 {
+  background: darkcyan;
+}
+div .bioreactor2:hover {
+  background: #00c2c2;
+}
+div .switchbutton_on {
+  border-color: green;
+  background: darkgreen;
+}
+div .switchbutton_on:hover {
+  border-color: lightgreen;
+}
+div .switchbutton_off {
+  border-color: red;
+  background: darkred;
+}
+div .switchbutton_off:hover {
+  border-color: pink;
+}
+
+.switches {
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 50%;
+}
+.switches button {
+  display: block;
+  border-width: 0.3vw;
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+}
+.switches button img {
+  height: 100%;
+}
+.switches button:active img {
+  height: 90%;
 }
 
 /*# sourceMappingURL=main.css.map */
