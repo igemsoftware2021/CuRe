@@ -58,16 +58,16 @@ div .press {
 div .press:hover {
   background: blue;
 }
-div .bioreactor1 {
-  background: #d07600;
+div .bioreactor {
+  background: darkgreen;
 }
-div .bioreactor1:hover {
-  background: #ffa400;
+div .bioreactor:hover {
+  background: green;
 }
-div .bioreactor2 {
+div .settings {
   background: darkcyan;
 }
-div .bioreactor2:hover {
+div .settings:hover {
   background: #00c2c2;
 }
 div .switchbutton_on {

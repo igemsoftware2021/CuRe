@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="tools.js"></script>
+    <script type="text/javascript" src="plotter.js"></script>
+    <script type="text/javascript" src="res/chart.js"></script>
+    <title>Bioreactor mode</title>
+    <link rel="stylesheet" href="bioreactor.css">
+    <script type="text/javascript">let page = bioreactor_str</script>
+</head>
+<body>
+<div>
+    <ol>
+        <li>
+            <p>Threshold high :</p>
+            <input type="number" id="thresh_high">
+        </li>
+        <li>
+            <p>Threshold middle :</p>
+            <input type="number" id="thresh_middle">
+        </li>
+        <li>
+            <p>Threshold low :</p>
+            <input type="number" id="thresh_low">
+        </li>
+        <li>
+            <script type="text/javascript">
+                function onApply() {
+                    let threshold1 = document.getElementById("thresh_high").value,
+                        threshold2 = document.getElementById("thresh_middle").value,
+                        threshold3 = document.getElementById("thresh_low").value
+                    throw_event("set_thresholds:" + threshold1.toString() + ";" + threshold2.toString() + ";" + threshold3.toString())
+                }
+            </script>
+            <button onclick="onApply()">Apply</button>
+        </li>
+
+    </ol>
+    <canvas id="plot_canvas"></canvas>
+    <script>
+        init_plot("plot_canvas")
+    </script>
+</div>
+<script>
+    function valid_for_autovalue(elem) {
+        return elem != null && elem.value === '' && document.activeElement !== elem
+    }
+
+    function set_default_thresholds(threshold_high, threshold_middle, threshold_low) {
+        let input_high = document.getElementById("thresh_high"),
+            input_middle = document.getElementById("thresh_middle"),
+            input_low = document.getElementById("thresh_low");
+        if (valid_for_autovalue(input_high))
+            input_high.value = threshold_high;
+        if (valid_for_autovalue(input_middle))
+            input_middle.value = threshold_middle;
+        if (valid_for_autovalue(input_low))
+            input_low.value = threshold_low;
+    }
+</script>
+
+</body>
+</html>

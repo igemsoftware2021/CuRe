@@ -16023,7 +16023,7 @@ plugins.title = title;
 
 core_controller.helpers = helpers$1;
 
-// @todo dispatch these helpers into appropriated helpers/helpers.* file and write unit tests!
+// @todo dispatch these helpers into appropriated helpers/helpers.* file and write unit debug_libs!
 core_helpers();
 
 core_controller._adapters = core_adapters;

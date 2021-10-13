@@ -1,4 +1,4 @@
-from os import getcwd
+from os.path import realpath
 
 
 class Events:
@@ -18,12 +18,11 @@ class Events:
 
 
 def gui_path():
-    is_linux = '/' in getcwd()
-    path_end = '/GUI/main.html'
-    if not is_linux: path_end = path_end.replace('/', '\\')
-    return getcwd() + path_end
+    path = realpath('GUI/main.html')
+    if '/' in path: path = 'file://' + path
+    return path
 
 
-class Updatable():
-    def update(self):
-        raise Exception(f'You must override the update function of {self.__class__}')
+def get_current_page(browser):
+    # browser.current_url.replace('\\', '/').split('/')[-1].replace('.html', '')
+    return browser.execute_script('return page')

@@ -7,6 +7,7 @@
     <script src="res/chart.js" type="text/javascript"></script>
     <script src="tools.js" type="text/javascript"></script>
     <script src="plotter.js" type="text/javascript"></script>
+    <script type="text/javascript">let page = pressure_sensor_str</script>
 </head>
 <body>
 <div>
@@ -17,41 +18,7 @@
     </div>
     <canvas id="plot_canvas"></canvas>
     <script>
-        chart = new Chart("plot_canvas",
-            {
-                type: "line",
-                data: {
-                    labels: [],
-                    datasets: [],
-                },
-                options: {
-                    animation: {
-                        duration: .1
-                    },
-                    scales: {
-                        yAxes: [{
-
-                            gridLines: {
-                                color: 'lightgray',
-                            }
-                        }],
-                        xAxes: [{
-                            gridLines: {
-                                color: 'lightgray'
-                            }
-                        }]
-                    },
-                    plugins: {
-                        legend: {
-                            labels: {
-                                // This more specific font property overrides the global property
-                                fontColor: 'yellow'
-                            }
-                        }
-                    }
-                }
-            }
-        )
+        init_plot("plot_canvas")
     </script>
 </div>
 </body>

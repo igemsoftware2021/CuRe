@@ -1,21 +1,23 @@
-try:
+from config import DEBUG_MODE
+
+if DEBUG_MODE:
+    import debug_libs.board as board
+    import debug_libs.adafruit_lps35hw as adafruit_lps35hw
+    import debug_libs.RPi.GPIO as GPIO
+else:
     import board
     import adafruit_lps35hw
     import RPi.GPIO as GPIO
-except:
-    print('Impossible to load libraries')
-    quit()
 
 
 class DeviceGPIO():
     def __init__(self, pin: int, start_state='off'):
         self.pin = pin
         GPIO.setup(pin, GPIO.OUT)
-        match start_state:
-            case 'on', True:
-                self.on()
-            case 'off', False:
-                self.off()
+        if start_state == 'on':
+            self.on()
+        else:
+            self.off()
 
     def on(self):
         GPIO.output(self.pin, GPIO.HIGH)

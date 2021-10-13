@@ -1,6 +1,42 @@
 /*
 * */
-function plot_datasets(datasets, x_labels, datasets_names, chart=chart) {
+function init_plot(canvas_id){
+    chart = new Chart(canvas_id,
+            {
+                type: "line",
+                data: {
+                    labels: [],
+                    datasets: [],
+                },
+                options: {
+                    animation: {
+                        duration: .1
+                    },
+                    scales: {
+                        yAxes: [{
+                            gridLines: {
+                                color: 'lightgray',
+                            }
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                                color: 'lightgray'
+                            }
+                        }]
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                // This more specific font property overrides the global property
+                                fontColor: 'yellow'
+                            }
+                        }
+                    }
+                }
+            }
+        )
+}
+function plot_datasets(datasets, x_labels, datasets_names) {
     // USEFUL LINKS
     // https://www.w3schools.com/ai/ai_chartjs.asp
 

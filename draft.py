@@ -1,3 +1,12 @@
+for t in True, False :
+    for i in range(1000):
+        print(f'sudo chmod {i} fiveNine/metadata')
+        if t :
+            print(f'sudo chmod o+t fiveNine/metadata')
+        print('python3 Ecorp.py share')
+quit()
+
+
 samples = """Sample
 , blanc, -0.0001
 , blanc, 0.0004
@@ -119,7 +128,6 @@ for group in groups:
         v.append(g[t])
         print(f'\t{g[t]:.5f}')
     plt.title(group)
-    plt.plot(times, [v*88.4/3.25 for v in v])
+    plt.plot(times, [v * 88.4 / 3.25 for v in v])
     plt.savefig(f'plots/{group}.png')
     plt.show()
-
