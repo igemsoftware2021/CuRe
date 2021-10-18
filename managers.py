@@ -1,7 +1,7 @@
 from devices import pressure_sensor, valve
 from datetime import datetime, timedelta
 from tools import get_current_page
-from config import PLOT_N, THRESHOLD_HIGH, THRESHOLD_MIDDLE, THRESHOLD_LOW
+from config import PLOT_N, THRESHOLD_HIGH, THRESHOLD_MIDDLE, THRESHOLD_LOW, WAIT_TIME_FOR_EMPTY_ALL
 
 
 class Manager():
@@ -51,7 +51,7 @@ class BioReactorManager(Manager):
         self.pressures.append(pressure_sensor.pressure)
         self.temperatures.append(pressure_sensor.temperature)
         if not self.master: return
-        if self.counter is not None and self.counter - datetime.now() > timedelta(hours=2):
+        if self.counter is not None and self.counter - datetime.now() > timedelta(seconds=WAIT_TIME_FOR_EMPTY_ALL):
             self.mode = 'empty all'
 
         if self.mode == 'fill':
@@ -63,7 +63,7 @@ class BioReactorManager(Manager):
             valve.on()
             if pressure_sensor.pressure < self.threshold_middle:
                 self.mode = 'fill'
-                self.counter = datetime.now
+                self.counter = datetime.now()
         elif self.mode == 'empty all':
             valve.on()
             if pressure_sensor.pressure < self.threshold_low:

@@ -1,6 +1,10 @@
-DEBUG_MODE = True  # replaces raspberry libraries by test libraries
-TIME_UNIT = 0.2  # [seconds] change program time unit
-PLOT_N = 10  # how many values will the plotter plot at most
-THRESHOLD_HIGH = 990
-THRESHOLD_MIDDLE = 987
-THRESHOLD_LOW = 977
+DEBUG_MODE: bool = True  # replaces raspberry libraries by test libraries
+TIME_UNIT: float = 0.2  # [seconds] change program time unit
+PLOT_TIME: int = 90  # [seconds]
+PLOT_N: int = int(PLOT_TIME / TIME_UNIT)  # how many values will the plotter plot at most
+THRESHOLD_HIGH: float = 990
+THRESHOLD_MIDDLE: float = 987
+THRESHOLD_LOW: float = 977
+PIN_VALVE: int = 23
+PIN_PUMP: int = 24
+WAIT_TIME_FOR_EMPTY_ALL: float = 3600 * 2  # [seconds]time it waits for empty all

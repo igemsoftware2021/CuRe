@@ -14,7 +14,15 @@ pressure_sensor_manager = PressureSensorManager(browser)
 bioreactor_manager = BioReactorManager(browser)
 managers = pressure_sensor_manager, bioreactor_manager
 
-event_to_action = {'pump_on': pump.on, 'pump_off': pump.off, 'valve_on': valve.on, 'valve_off': valve.off}
+
+def save_datas():
+    with open('datas.txt', 'w') as file:
+        file.write(str(pressure_sensor_manager.pressures))
+        file.close()
+
+
+event_to_action = {'pump_on': pump.on, 'pump_off': pump.off, 'valve_on': valve.on, 'valve_off': valve.off,
+                   'save_datas': save_datas}
 page_to_manager = {'pressure_sensor': pressure_sensor_manager, 'bioreactor': bioreactor_manager}
 
 

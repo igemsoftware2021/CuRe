@@ -35,22 +35,22 @@
     <img src="res/cure.svg">
     <div class="switches">
         <button class="switchbutton_off" id="valvebutton" onclick="valve_switch()">
-            <img src="res/valve.svg">
+            <img src="res/valve.png">
         </button>
         <button class="switchbutton_off" id="pumpbutton" onclick="pump_switch()">
-            <img src="res/pump.svg">
+            <img src="res/pump.png">
         </button>
     </div>
     <button class="press" onclick="redirect(pressure_sensor_str)">
-        <img src="res/thermo.svg"/>
+        <img src="res/pressuresensor.png"/>
         <label>Pressure sensor</label>
     </button>
     <button class="bioreactor" onclick="redirect(bioreactor_str)">
-        <img src="res/robot.svg"/>
+        <img src="res/robot.png"/>
         <label>Bioreactor</label>
     </button>
-    <button class="settings" onclick="">
-        <img src="res/settings.svg"/>
+    <button class="settings" onclick="throw_event('save_datas')">
+        <img src="res/save.png"/>
         <label>Other</label>
     </button>
     <script>

@@ -1,4 +1,4 @@
-from config import DEBUG_MODE
+from config import DEBUG_MODE, PIN_VALVE, PIN_PUMP
 
 if DEBUG_MODE:
     import debug_libs.board as board
@@ -36,4 +36,4 @@ class DeviceGPIO():
 
 pressure_sensor = adafruit_lps35hw.LPS35HW(board.I2C())
 GPIO.setmode(GPIO.BCM)
-valve, pump = DeviceGPIO(23), DeviceGPIO(24)
+valve, pump = DeviceGPIO(PIN_VALVE), DeviceGPIO(PIN_PUMP)
