@@ -37,6 +37,6 @@ Don't care to start the GUI manually, the scripts will do it for you !
 ## GUI
 The GUI is programmed in HTML / CSS / JS and is displayed by Chrome thanks to the Selenium library. \
 The ```tools.js``` file contains a function ```throw_event(event)``` that will throw an event to the main script runing in background. \
-The main script has the capacity to execute a piece of javascript inside the GUI  for example to plot a chart. 
+The main script has the ability to execute a piece of javascript inside the GUI  for example to plot a chart. 
 
 
